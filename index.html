@@ -3,298 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>나비소녀 · 原曲音频精听版</title>
+  <title>EXO · 韩语歌曲学习目录</title>
   <style>
-    :root{--bg:#f7f4ee;--surface:#fffdf9;--surface-2:#f0ebe2;--text:#242522;--muted:#77756d;--line:#e5ded2;--accent:#b4553f;--accent-soft:#f4ddd5;--green:#4c7b62;--green-soft:#dfece3;--shadow:0 18px 50px rgba(78,53,38,.09)}
-    *{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 10% 0%,#fffaf0 0,#f7f4ee 42%,#efeae1 100%);color:var(--text);font-family:Inter,"Noto Sans KR","Malgun Gothic","Microsoft YaHei",sans-serif;line-height:1.55}
-    button,input{font:inherit} button{cursor:pointer} .app{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
-    .topbar{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:24px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}.brand h1{font-size:clamp(28px,4vw,46px);line-height:1.08;margin:8px 0 8px;letter-spacing:-.04em}.brand p{margin:0;color:var(--muted);font-size:14px}.mark{width:54px;height:54px;border-radius:18px;background:var(--accent);color:#fff9f2;display:grid;place-items:center;font-size:27px;box-shadow:0 10px 22px rgba(180,85,63,.25)}
-    .shell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px;align-items:start}.sidebar{position:sticky;top:18px;background:rgba(255,253,249,.72);border:1px solid rgba(229,222,210,.9);border-radius:22px;padding:12px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}.nav-title{padding:10px 12px 8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.nav-btn{display:flex;width:100%;align-items:center;gap:10px;border:0;background:transparent;color:var(--muted);padding:12px;border-radius:13px;text-align:left}.nav-btn:hover{background:var(--surface-2);color:var(--text)}.nav-btn.active{background:var(--accent);color:#fffaf4}.nav-icon{width:22px;text-align:center;font-size:17px}.side-note{margin:20px 8px 6px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
-    .main{min-width:0}.hero{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px 24px;box-shadow:var(--shadow);display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:18px}.hero h2{margin:3px 0 7px;font-size:25px;letter-spacing:-.03em}.hero p{margin:0;color:var(--muted);font-size:14px}.stats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.stat{min-width:88px;background:var(--surface-2);border-radius:14px;padding:10px 13px}.stat b{display:block;font-size:19px;color:var(--accent)}.stat span{font-size:11px;color:var(--muted)}
-    .toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 14px}.search{flex:1 1 220px;position:relative}.search input{width:100%;border:1px solid var(--line);background:rgba(255,253,249,.86);padding:12px 14px 12px 39px;border-radius:13px;outline:none;color:var(--text)}.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}.search span{position:absolute;left:14px;top:10px;color:var(--muted)}.soft-btn,.primary-btn{border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--surface);color:var(--text)}.soft-btn:hover{background:var(--surface-2)}.primary-btn{background:var(--accent);border-color:var(--accent);color:#fffaf4}.primary-btn:hover{filter:brightness(.95)}
-    .section{display:none}.section.active{display:block}.section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin:5px 0 14px}.section-head h3{margin:0;font-size:20px}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}.count{font-size:12px;color:var(--muted);white-space:nowrap}
-    .lyrics{display:grid;gap:10px}.lyric{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}.lyric.chorus{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}.lyric-main-row{display:flex;align-items:stretch}.lyric-main{flex:1;width:100%;border:0;background:transparent;text-align:left;display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:12px;align-items:center;padding:15px 17px}.lyric-main:hover{background:#fff8f3}.lyric.chorus .lyric-main{background:var(--accent-soft)}.lyric-no{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}.ko{font-size:18px;font-weight:600;letter-spacing:.01em}.lyric-tag{font-size:11px;color:var(--accent);background:var(--accent-soft);padding:4px 8px;border-radius:999px}.chorus-pill{font-size:11px;color:var(--accent);background:var(--surface);border:1px solid var(--accent);padding:3px 7px;border-radius:999px;white-space:nowrap}.lyric-detail{display:none;padding:0 18px 16px 67px;border-top:1px solid var(--line)}.lyric.open .lyric-detail{display:block}.translation{margin:13px 0 4px;font-size:15px}.phonetic{color:var(--accent);font-size:13px}.line-note{color:var(--muted);font-size:12px;margin-top:6px}.mini-words{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.mini-words button{border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:999px;padding:4px 8px;font-size:12px}.mini-words button:hover{border-color:var(--accent);color:var(--accent)}
-    .speak-btn,.start-here-btn{border:1px solid var(--line);background:var(--surface-2);color:var(--accent);border-radius:11px;padding:8px 10px;font-size:12px;white-space:nowrap;align-self:center;margin-right:13px}.speak-btn:hover,.start-here-btn:hover{background:var(--accent-soft);border-color:var(--accent)}.speak-btn.playing{background:var(--green-soft);border-color:var(--green);color:var(--green)}
-    .reading-strip{margin:15px 0 10px;background:#302015;color:#fff3df;border-radius:14px;padding:17px 15px 14px;overflow:hidden}.reading-strip-title{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#d9b492;margin-bottom:13px}.annotation-line{display:flex;align-items:flex-start;gap:0;overflow-x:auto;padding-bottom:4px}.annotation-word{flex:0 0 auto;min-width:72px;text-align:center;padding:0 8px;position:relative}.aligned-row{display:flex;justify-content:center;gap:2px}.syllable-cell{display:flex;flex-direction:column;align-items:center;min-width:19px}.syllable-ko{font-size:20px;font-weight:700;line-height:1.15}.syllable-py{font-size:12px;color:#f2b995;line-height:1.3;margin-top:5px;white-space:nowrap}.annotation-zh{font-size:12px;color:#ffe5c5;margin-top:5px;white-space:nowrap}.annotation-connector{height:25px;position:relative;margin:3px auto 0;width:1px;background:#dfb58f}.annotation-connector::after{content:'';position:absolute;width:6px;height:6px;border-radius:50%;background:#f0c39f;bottom:-1px;left:-2.5px}.annotation-grammar{font-size:11px;color:#f1d2b4;line-height:1.35;max-width:110px;margin:8px auto 0}.reading-translation{margin:14px 0 0;padding-top:12px;border-top:1px solid rgba(255,231,205,.22);font-size:13px;line-height:1.6;color:#fff0da}.reading-translation b{color:#f2b995;font-weight:600}.chorus .translation,.chorus .phonetic{display:none}.chorus .breakdown-title,.chorus .breakdown-grid{display:none}
-    .vocab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.vocab-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;position:relative}.vocab-card.mastered{background:linear-gradient(135deg,var(--surface),var(--green-soft));border-color:#c8dccf}.word-row{display:flex;justify-content:space-between;gap:10px;align-items:start}.word{font-size:21px;font-weight:700}.pos{font-size:11px;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:3px 7px}.meaning{margin:7px 0 4px;font-size:15px}.roman{font-size:12px;color:var(--muted)}.example{margin:13px 0 0;padding-top:10px;border-top:1px solid var(--line);font-size:13px}.example b{font-weight:600}.vocab-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:13px}.master-btn{border:0;background:transparent;color:var(--muted);font-size:12px;padding:5px 0}.master-btn:hover{color:var(--green)}.master-btn.done{color:var(--green)}
-    .grammar-list{display:grid;gap:12px}.grammar-card{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:18px 20px}.grammar-top{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.grammar-pattern{font-size:19px;font-weight:700;color:var(--accent)}.grammar-name{font-size:13px;color:var(--muted)}.grammar-card p{margin:8px 0;color:var(--text);font-size:14px}.grammar-example{background:var(--surface-2);border-radius:12px;padding:10px 12px;margin-top:11px}.grammar-example b{display:block;font-size:16px}.grammar-example span{font-size:13px;color:var(--muted)}.grammar-detail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}.grammar-detail-block{padding:10px 11px;border-left:3px solid var(--accent-soft);background:#fffaf5;border-radius:9px}.grammar-detail-block b{display:block;color:var(--accent);font-size:12px;margin-bottom:3px}.grammar-detail-block span{font-size:12px;line-height:1.55;color:var(--text)}
-    .practice-wrap{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:16px}.practice-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:var(--shadow);min-height:370px;display:flex;flex-direction:column;justify-content:space-between}.practice-kicker{font-size:12px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}.practice-question{font-size:clamp(25px,4vw,42px);line-height:1.25;margin:24px 0 8px;font-weight:650;letter-spacing:-.03em}.practice-sub{color:var(--muted);font-size:14px;min-height:25px}.answer{margin-top:20px;padding:14px 16px;background:var(--green-soft);border-radius:13px;display:none}.answer.show{display:block}.answer b{font-size:20px}.practice-actions{display:flex;gap:8px;flex-wrap:wrap}.practice-side{background:var(--surface-2);border-radius:18px;padding:17px}.practice-side h4{margin:0 0 12px}.mode-btn{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--text);text-align:left;border-radius:11px;padding:10px 12px;margin-bottom:8px}.mode-btn.active{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}.quiz-options{display:grid;gap:9px;margin-top:18px}.quiz-option{border:1px solid var(--line);background:var(--surface);padding:11px 13px;border-radius:11px;text-align:left}.quiz-option:hover{border-color:var(--accent)}.quiz-option.correct{background:var(--green-soft);border-color:var(--green)}.quiz-option.wrong{background:#f7e1dd;border-color:var(--accent)}.grammar-card.grammar-target{border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}.lyric.lyric-target{border-color:var(--green);box-shadow:0 0 0 3px var(--green-soft)}.grammar-actions{display:flex;gap:8px;align-items:center;margin-top:13px}.grammar-actions .soft-btn{font-size:12px}.line-grammar{margin-top:13px;padding:12px 14px;background:#fffaf5;border-left:3px solid var(--accent-soft);border-radius:10px;font-size:13px;line-height:1.65}.line-grammar b{color:var(--accent);margin-right:5px}.grammar-subhead{grid-column:1/-1;padding:8px 2px 0;color:var(--accent);font-size:13px;font-weight:700}
-    .empty{padding:34px;text-align:center;background:var(--surface);border:1px dashed var(--line);border-radius:16px;color:var(--muted)}.toast{position:fixed;right:22px;bottom:22px;background:var(--text);color:#fffaf4;padding:11px 15px;border-radius:12px;opacity:0;transform:translateY(10px);pointer-events:none;transition:.22s;box-shadow:var(--shadow);font-size:13px}.toast.show{opacity:1;transform:translateY(0)}
-    .lyric.is-playing{border-color:var(--green);box-shadow:0 0 0 2px var(--green-soft)}.lyric.is-playing .lyric-main{background:var(--green-soft)}
-    .original-player{margin:0 0 16px;background:#302015;color:#fff3df;border-radius:16px;padding:15px 17px;box-shadow:var(--shadow)}.original-player-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.original-player strong{font-size:14px}.original-player small{color:#d9b492}.original-player audio{width:100%;margin-top:11px;height:40px}.audio-status{font-size:12px;color:#f2b995;margin-top:8px;min-height:18px}
-    .floating-locator{position:fixed;right:24px;bottom:24px;z-index:20;border:1px solid var(--accent);background:var(--accent);color:#fffaf4;border-radius:999px;padding:12px 16px;box-shadow:0 12px 28px rgba(78,53,38,.25);font-size:13px;display:none}.floating-locator.show{display:block}.floating-locator:hover{filter:brightness(.95);transform:translateY(-1px)}
-    @media(max-width:760px){.app{padding:20px 14px 40px}.topbar{margin-bottom:18px}.shell{display:block}.sidebar{position:static;display:flex;gap:5px;overflow:auto;margin-bottom:14px;padding:7px}.nav-title,.side-note{display:none}.nav-btn{width:auto;flex:0 0 auto;padding:9px 11px;white-space:nowrap}.nav-icon{display:none}.hero{display:block;padding:20px}.stats{justify-content:flex-start;margin-top:16px}.stat{min-width:78px}.practice-wrap{grid-template-columns:1fr}.practice-side{order:-1}.vocab-grid{grid-template-columns:1fr}.grammar-detail{grid-template-columns:1fr}.lyric-main{grid-template-columns:28px minmax(0,1fr);gap:8px;padding:13px}.lyric-tag{grid-column:2;justify-self:start}.lyric-detail{padding-left:48px}.ko{font-size:17px}.speak-btn,.start-here-btn{margin-right:5px;padding:7px 6px;font-size:11px}.practice-card{min-height:360px;padding:21px}.practice-question{margin-top:18px}}
-    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+    :root{--bg:#f7f4ee;--surface:#fffdf9;--surface2:#f0ebe2;--text:#27231f;--muted:#777069;--line:#e5ded2;--accent:#a34d39;--accent2:#f3ddd4;--shadow:0 18px 50px rgba(78,53,38,.10)}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 10% 0%,#fffaf0 0,#f7f4ee 42%,#efeae1 100%);color:var(--text);font-family:Inter,"Noto Sans KR","Malgun Gothic","Microsoft YaHei",sans-serif}body{padding:22px}.library{max-width:1320px;margin:0 auto}.library-top{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin:0 auto 18px;max-width:1180px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}.library h1{font-size:clamp(28px,4vw,44px);line-height:1.08;margin:8px 0}.library-top p{margin:0;color:var(--muted);font-size:14px}.mark{width:56px;height:56px;border-radius:18px;background:var(--accent);color:#fff9f2;display:grid;place-items:center;font-size:23px;box-shadow:0 10px 22px rgba(163,77,57,.25)}.library-shell{display:grid;grid-template-columns:245px minmax(0,1fr);gap:18px;align-items:start;max-width:1320px;margin:0 auto}.directory{position:sticky;top:18px;background:rgba(255,253,249,.82);border:1px solid rgba(229,222,210,.9);border-radius:22px;padding:13px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}.directory-title{padding:8px 10px 12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}.song-btn{display:block;width:100%;border:1px solid transparent;background:transparent;color:var(--text);text-align:left;border-radius:15px;padding:13px 12px;margin-bottom:7px}.song-btn:hover{background:var(--surface2)}.song-btn.active{background:var(--accent);color:#fffaf4;box-shadow:0 8px 16px rgba(163,77,57,.18)}.song-title{font-size:17px;font-weight:700}.song-sub{font-size:12px;margin-top:3px;opacity:.75}.directory-note{border-top:1px solid var(--line);padding:14px 10px 3px;margin-top:8px;color:var(--muted);font-size:12px;line-height:1.65}.viewer{min-width:0;background:rgba(255,253,249,.62);border:1px solid var(--line);border-radius:24px;padding:8px;box-shadow:var(--shadow)}.viewer-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:5px 8px 9px;color:var(--muted);font-size:12px}.viewer-head strong{color:var(--text);font-size:13px}.song-frame{display:block;width:100%;height:calc(100vh - 142px);min-height:760px;border:0;border-radius:18px;background:var(--bg)}.loading{padding:36px;text-align:center;color:var(--muted)}
+    @media(max-width:820px){body{padding:12px}.library-top{align-items:flex-start}.library-shell{display:block}.directory{position:static;margin-bottom:12px;display:flex;align-items:stretch;gap:7px;overflow:auto;padding:8px}.directory-title,.directory-note{display:none}.song-btn{min-width:205px;margin:0;padding:10px}.song-title{font-size:15px}.viewer{padding:5px}.viewer-head{padding:5px 6px 8px}.song-frame{height:calc(100vh - 192px);min-height:720px}}
   </style>
 </head>
 <body>
-  <div class="app" id="app">
-    <header class="topbar">
-      <div class="brand"><div class="eyebrow">Korean with EXO · Original Audio</div><h1>나비소녀 <span style="color:var(--accent)">·</span> Don't Go</h1><p>用原曲人声逐句对照，学会跟随、心动与“不要消失”的韩语表达。</p></div>
-      <div class="mark" aria-hidden="true">나비</div>
-    </header>
-    <div class="shell">
-      <aside class="sidebar" aria-label="学习模块">
-        <div class="nav-title">学习模块</div>
-        <button class="nav-btn active" data-tab="lyrics"><span class="nav-icon">♫</span>歌词精读</button>
-        <button class="nav-btn" data-tab="vocab"><span class="nav-icon">A</span>核心词汇</button>
-        <button class="nav-btn" data-tab="grammar"><span class="nav-icon">文</span>语法拆解</button>
-        <button class="nav-btn" data-tab="practice"><span class="nav-icon">✓</span>复习练习</button>
-        <div class="side-note">点击任意歌词行，展开中文、谐音和重点词。掌握状态会自动保存在本机。</div>
-      </aside>
-      <main class="main">
-        <section class="hero">
-          <div><div class="eyebrow">Today's lesson</div><h2>从“나비”开始学会描述心动</h2><p>建议顺序：歌词精读 → 词汇卡 → 语法拆解 → 复习练习</p></div>
-          <div class="stats"><div class="stat"><b id="masteredCount">0</b><span>已掌握词汇</span></div><div class="stat"><b id="streakCount">1</b><span>今日学习</span></div></div>
-        </section>
-
-        <section class="section active" id="lyricsSection">
-          <div class="toolbar"><div class="search"><span>⌕</span><input id="lyricSearch" placeholder="搜索韩文、中文或谐音…" aria-label="搜索歌词"></div><button class="soft-btn" id="continuousBtn">▶ 从头连续播放</button><button class="soft-btn" id="expandAll">全部展开</button></div>
-          <div class="original-player"><div class="original-player-top"><strong>原曲音频对照</strong><small>拖动进度条，也可以从任意位置开始</small></div><audio id="songAudio" controls preload="metadata" src="audio/song-original.mp3"></audio><div class="audio-status" id="audioStatus">点击某一句的“播放本句”，从原曲对应位置开始。</div></div>
-          <div class="section-head"><div><h3>歌词精读</h3><p>副歌已默认展开；先读韩文，再看逐词解释。谐音只作发音提示，最终以韩文为准。</p></div><div class="count" id="lyricCount"></div></div>
-          <div class="lyrics" id="lyricsList"></div>
-        </section>
-
-        <section class="section" id="vocabSection">
-          <div class="toolbar"><div class="search"><span>⌕</span><input id="vocabSearch" placeholder="搜索词汇或中文释义…" aria-label="搜索词汇"></div><button class="soft-btn" id="showUnmastered">只看未掌握</button></div>
-          <div class="section-head"><div><h3>核心词汇</h3><p>把歌词里的高频动作、情绪和连接表达放进记忆卡。</p></div><div class="count" id="vocabCount"></div></div>
-          <div class="vocab-grid" id="vocabList"></div>
-        </section>
-
-        <section class="section" id="grammarSection">
-          <div class="section-head"><div><h3>语法拆解</h3><p>每个语法点都连接到歌词中的真实句子。</p></div><div class="count">14 个重点</div></div>
-          <div class="grammar-list" id="grammarList"></div>
-        </section>
-
-        <section class="section" id="practiceSection">
-          <div class="section-head"><div><h3>复习练习</h3><p>先自己回忆，再点击显示答案。选择题会即时反馈。</p></div><div class="count" id="practiceCount"></div></div>
-          <div class="practice-wrap">
-            <div class="practice-card" id="practiceCard"></div>
-            <aside class="practice-side"><h4>练习模式</h4><button class="mode-btn active" data-mode="flash">词汇闪卡<small> · 看韩文回忆中文</small></button><button class="mode-btn" data-mode="quiz">选择题<small> · 辨认正确含义</small></button><p class="line-note">当前练习范围：本歌核心词汇。掌握后仍会偶尔复习，帮助长期记忆。</p></aside>
-          </div>
-        </section>
-      </main>
+  <div class="library">
+    <header class="library-top"><div><div class="eyebrow">EXO · Korean Song Study</div><h1>韩语歌曲学习目录</h1><p>从歌曲目录切换学习页面；每首歌都有独立的歌词、音频、词汇和语法资料。</p></div><div class="mark" aria-hidden="true">EXO</div></header>
+    <div class="library-shell">
+      <nav class="directory" aria-label="歌曲目录"><div class="directory-title">歌曲目录</div><button class="song-btn active" data-song="dont-go"><div class="song-title">나비소녀</div><div class="song-sub">Don't Go · 原曲精听</div></button><button class="song-btn" data-song="growl"><div class="song-title">으르렁</div><div class="song-sub">Growl · 咆哮</div></button><div class="directory-note">点击歌曲名称即可切换。学习进度分别保存在本机浏览器中。</div></nav>
+      <main class="viewer"><div class="viewer-head"><strong id="currentSong">나비소녀 · Don't Go</strong><span>歌曲学习页面</span></div><iframe class="song-frame" id="songFrame" title="歌曲学习页面" src="app-original-audio/index.html"></iframe><div class="loading" id="loading" hidden>正在切换歌曲……</div></main>
     </div>
   </div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <button class="floating-locator" id="floatingLocator" type="button">↩ 定位当前歌词行</button>
   <script>
-    const lyrics = [
-      {ko:'조그만 날갯짓 널 향한 이끌림', zh:'扇动小小的蝶翼；你对我的吸引力', py:'走可满 那给几 挠 hiang韩 一个林', tag:'心动', words:['날갯짓','이끌림']},
-      {ko:'나에게 따라오라 손짓한 것 같아서', zh:'像是在招手，呼唤我跟你一起走', py:'那诶给 大啦哦啦 宋几摊 扣 卡他搜', tag:'推测', words:['따라오다','손짓하다','것 같다']},
-      {ko:'애절한 눈빛과 무언의 이야기', zh:'哀切的眼神和无言的故事', py:'诶草蓝 努比刮 木翁内 一呀gi', tag:'描写', words:['애절하다','눈빛','무언']},
-      {ko:'가슴에 회오리가 몰아치던 그날 밤', zh:'心中刮起旋风的那个晚上', py:'嘎森没 会哦里嘎 莫啦气东 可那 半', tag:'回忆', words:['가슴','회오리','몰아치다']},
-      {ko:'오묘한 그대의 모습에 넋을 놓고', zh:'为你奇妙神秘的身影失了魂魄', py:'哦妙韩 可带诶 莫丝呗 闹给 喏够', tag:'-고', words:['오묘하다','모습','넋을 놓다']},
-      {ko:'하나뿐인 영혼을 뺏기고', zh:'唯一的灵魂被夺走', py:'哈那本宁 泳红内 背gi够', tag:'被动感', words:['하나뿐인','영혼','뺏기다']},
-      {ko:'그대의 몸짓에 완전히 취해서', zh:'完全沉醉于你的身影', py:'可带诶 蒙几塞 完从尼 催嘿搜', tag:'-아서', words:['몸짓','완전히','취하다']},
-      {ko:'숨 쉬는 것조차 잊어버린 나인데', zh:'连呼吸都遗忘的我', py:'宋 嘘嫩 扣走恰 一走剖林 那因带', tag:'-조차', words:['숨 쉬다','것조차','잊어버리다']},
-      {ko:'왈츠처럼 사뿐히 앉아', zh:'像华尔兹般轻盈地停驻', py:'挖此凑龙 撒本尼 安那', tag:'比喻', words:['처럼','사뿐히','앉다']},
-      {ko:'눈을 뗄 수 없어', zh:'无法把视线从你身上移开', py:'努内 得 苏 欧扫', tag:'不能', words:['눈을 떼다','-(으)ㄹ 수 없다']},
-      {ko:'시선이 자연스레 걸음마다 널 따라가잖아', zh:'视线不由自主，跟随你的每个足迹', py:'西宋尼 加严丝类 勾楞吗他 挠 大啦嘎赞那', tag:'-잖아', words:['시선','자연스레','걸음마다','따라가다']},
-      {ko:'날 안내해줘', zh:'指引我吧 / 带我走吧', py:'那 安内嘿做', tag:'请求', words:['안내하다','-아/어 줘']},
-      {ko:'그대가 살고 있는 곳에 나도 함께 데려가줘', zh:'请把我一起带到你生活的地方', py:'可带嘎 撒够 一嫩 够塞 那都 韩给 带撩嘎做', tag:'请求', words:['살고 있다','곳','함께','데려가다']},
-      {ko:'세상의 끝이라도 뒤따라갈 테니', zh:'哪怕是世界尽头，我也会跟着你前进', py:'塞桑诶 哥起啦都 对大啦嘎 忒尼', tag:'-라도 / -테니', words:['세상','끝','뒤따라가다','-(으)ㄹ 테니']},
-      {ko:'부디 내 시야에서 벗어나지 말아줘', zh:'千万不要脱离我的视野', py:'不地 内 西呀诶搜 波搜那几 马啦做', tag:'不要', words:['부디','시야','벗어나다','-지 말아 줘']},
-      {ko:'아침이 와도 사라지지 말아줘', zh:'即使清晨来临，也不要消失', py:'啊亲迷 哇都 撒啦几几 马啦做', tag:'-아/어도', words:['아침','오다','사라지다','-아/어도']},
-      {ko:'꿈을 꾸는 걸음 그댄 나만의 아름다운 나비', zh:'踏着梦想的步伐；你是只属于我的美丽蝴蝶', py:'古没 古嫩 勾楞 / 可但 那满内 啊楞他温 那比', tag:'副歌', words:['꿈을 꾸다','걸음','나만의','아름답다','나비']},
-      {ko:'어디서 왔는지 어디로 가는지', zh:'不知从何而来、要往何处去', py:'哦地搜 哇嫩几 哦地咯 嘎嫩几', tag:'-는지', words:['어디서','오다','어디로','가다','-는지']},
-      {ko:'친절히 여기까지 마중을 와준 너', zh:'贴心地到这里来迎接我的你', py:'亲草里 哟gi嘎几 吗中额 哇君 挠', tag:'-아/어 주다', words:['친절히','여기까지','마중','와주다']},
-      {ko:'가파른 오르막 깎아진 절벽도', zh:'即便是崎岖险峻的悬崖峭壁', py:'嘎帕楞 哦了吗 嘎嘎进 草表都', tag:'场景', words:['가파르다','오르막','절벽']},
-      {ko:'걱정마 무엇도 두려울 것이 없으니', zh:'别担心，什么可怕的事都不会发生', py:'勾从吗 木哦都 度撩乌 扣西 欧丝尼', tag:'-으니', words:['걱정하다','무엇도','두렵다','것이 없다']},
-      {ko:'너는 뽐내 우아한 자태', zh:'你展示着独一无二的优雅姿态', py:'挠嫩 嘣内 乌啊韩 加忒', tag:'描写', words:['뽐내다','우아하다','자태']},
-      {ko:'오 난 몇 번이고 반하고', zh:'不管多少次，我都会为你入迷', py:'哦 南 苗 嘣尼够 半那够', tag:'-고', words:['몇 번이고','반하다']},
-      {ko:'사랑은 이렇게 나도 모르게 예고도 없이 불시에 찾아와', zh:'爱情就这样，在不知不觉间毫无征兆地突然降临', py:'撒朗恩 一漏给 那都 莫了给 / 耶够都 欧西 不西诶 恰加哇', tag:'叙述', words:['나도 모르게','예고','불시에','찾아오다']},
-      {ko:'낯선 곳을 헤맨다 해도 길을 잃어버린대도', zh:'即使在陌生的地方徘徊，即使迷失方向', py:'那宋 够丝 嘿们他 嘿都 / gil了 一咯剖林带都', tag:'即使', words:['낯설다','헤매다','길을 잃다','-ㄴ대도']},
-      {ko:'누구보다 솔직한 나의 맘을 따를 거야', zh:'也要跟随我那比谁都真挚的心', py:'努谷啵他 嗖几看 那诶 满没 大了勾呀', tag:'意志', words:['누구보다','솔직하다','마음','따르다','-(으)ㄹ 거야']},
-      {ko:'조용히 눈에 띄는 몸짓 강하고 부드러운 눈빛', zh:'静静跃入视野的身影；强大又温柔的目光', py:'走用hi 努内 第嫩 蒙几 / 康哈够 不的漏温 努比', tag:'修饰', words:['조용히','눈에 띄다','강하다','부드럽다']},
-      {ko:'거부할 수 없는 나니까', zh:'因为我根本无法拒绝', py:'勾不哈 苏 欧嫩 那尼嘎', tag:'不能', words:['거부하다','-(으)ㄹ 수 없다','-(이)니까']},
-      {ko:'날 데려가줘', zh:'带我走吧', py:'那 带撩嘎做', tag:'请求', words:['데려가다','-아/어 줘']},
-      {ko:'세상의 끝이라도 따라갈게', zh:'哪怕是世界尽头，我也会跟着去', py:'塞桑诶 哥起啦都 大啦嘎给', tag:'-ㄹ게', words:['따라가다','-(으)ㄹ게']},
-      {ko:'조그마한 손짓 나의 가슴엔 회오리가 친다', zh:'一个小小的举动，在我心里刮起旋风', py:'走可吗韩 宋几 / 那诶 嘎森们 会哦里嘎 亲他', tag:'结尾', words:['조그마하다','손짓','가슴','회오리','치다']}
-    ];
-    const vocab = [
-      ['나비','蝴蝶','名词','nabi','그댄 나만의 아름다운 나비'],['날갯짓','翅膀的扇动、振翅','名词','nal-gaet-jit','조그만 날갯짓'],['이끌림','吸引力、被吸引的感觉','名词','i-kkeul-lim','널 향한 이끌림'],['손짓하다','招手；用手势示意','动词','son-jit-ha-da','손짓한 것 같아서'],['애절하다','哀切、恳切','形容词','ae-jeol-ha-da','애절한 눈빛'],['눈빛','眼神、目光','名词','nun-bit','강하고 부드러운 눈빛'],['회오리','旋风、涡流','名词','hoe-o-ri','가슴에 회오리가'],['몰아치다','猛烈袭来；席卷','动词','mol-a-chi-da','회오리가 몰아치던'],['오묘하다','奇妙而神秘','形容词','o-myo-ha-da','오묘한 그대의 모습'],['넋을 놓다','失神、失魂落魄','惯用语','neok-seul noh-da','넋을 놓고'],['뺏기다','被夺走、被抢走','动词','ppaet-gi-da','영혼을 뺏기고'],['취하다','沉醉；陶醉','动词','chwi-ha-da','완전히 취해서'],['숨 쉬다','呼吸','动词','sum swi-da','숨 쉬는 것조차'],['사뿐히','轻盈地、轻轻地','副词','sa-ppun-hi','사뿐히 앉아'],['시선','视线、目光','名词','si-seon','시선이 자연스레'],['자연스레','自然地、不由自主地','副词','ja-yeon-seu-re','자연스레 따라가잖아'],['따라가다','跟随、跟着去','动词','tta-ra-ga-da','널 따라가잖아'],['안내하다','引导、指引','动词','an-nae-ha-da','날 안내해줘'],['데려가다','带某人一起去','动词','de-ryeo-ga-da','나도 함께 데려가줘'],['뒤따라가다','跟在后面走、跟随前进','动词','dwi-tta-ra-ga-da','뒤따라갈 테니'],['부디','务必、千万、请','副词','bu-di','부디 내 시야에서'],['벗어나다','脱离、离开、摆脱','动词','beot-eo-na-da','벗어나지 말아줘'],['사라지다','消失','动词','sa-ra-ji-da','사라지지 말아줘'],['낯설다','陌生、不熟悉','形容词','nat-seol-da','낯선 곳'],['헤매다','徘徊、迷路','动词','he-mae-da','낯선 곳을 헤맨다'],['솔직하다','坦率、真挚','形容词','sol-jik-ha-da','솔직한 나의 맘'],['거부하다','拒绝','动词','geo-bu-ha-da','거부할 수 없는'],['자태','姿态、风姿','名词','ja-tae','우아한 자태'],['반하다','迷上、为之倾倒','动词','ban-ha-da','몇 번이고 반하고'],['불시에','突然地、出其不意地','副词','bul-si-e','불시에 찾아와'],['마중','迎接、接人','名词','ma-jung','마중을 와준 너'],['눈에 띄다','显眼；映入眼帘','惯用语','nun-e ttwi-da','눈에 띄는 몸짓']
-    ].map((x,i)=>({id:i,word:x[0],meaning:x[1],pos:x[2],roman:x[3],example:x[4]}));
-    const grammar = [
-      {pattern:'-ㄴ/은 것 같다',name:'好像……；似乎……',example:'손짓한 것 같아서',translation:'像是在招手，所以……',note:'说话人根据看到的动作作出不确定判断。손짓하다 → 손짓한（过去定语）+ 것 같다；-아서 把“好像……”和后文连接起来。',form:'动词过去时定语 + 것 같다：손짓하다 → 손짓한 것 같다。',usage:'这里不是断言“确实招手”，而是“看起来像是在招手”，语气留有余地。',compare:'现在：-는 것 같다（好像正在……）；将来：-(으)ㄹ 것 같다（好像会……）。'},
-      {pattern:'N을/를 향한',name:'面向……；朝向……的',example:'널 향한 이끌림',translation:'朝向你的吸引力',note:'향하다 是“朝向”，향한 是它的过去定语形式，用来修饰后面的名词。널 是 너를 的缩略。',form:'目标 + 을/를 향하다 → 목표를 향한 + 名词。',usage:'널 향한 不是完整句子，而是“朝向你的……”这一名词短语。',compare:'널 향해（朝向你，副词用法）；널 향한 이끌림（朝向你的吸引力，定语用法）。'},
-      {pattern:'N에 / N에서',name:'在……；到……；从……',example:'가슴에 / 내 시야에서',translation:'在心中 / 从我的视野里',note:'에 表示位置、落点或目的地；에서 表示动作发生的场所，也可表示离开的范围。',form:'场所 + 에：在/到那里；场所 + 에서：在那儿做/从那里离开。',usage:'가슴에 회오리가 치다 是“心里刮起旋风”；시야에서 벗어나다 是“脱离视野”。',compare:'학교에 가다（去学校）；학교에서 공부하다（在学校学习）。'},
-      {pattern:'-고',name:'并且；然后；做完……后',example:'넋을 놓고 / 뺏기고',translation:'失神，然后…… / 被夺走后……',note:'歌词里连接连续状态或动作。前后主语通常相同，具体关系要看上下文。',form:'动词/形容词词干 + -고；넋을 놓다 → 넋을 놓고。',usage:'넋을 놓고 后面接 뺏기고，形成“失神着，灵魂又被夺走”的连续画面。',compare:'-고 主要是并列/连接；-아서/어서 更明确地表示原因或先后。'},
-      {pattern:'-(으)ㄹ 수 없다',name:'不能……；无法……',example:'눈을 뗄 수 없어',translation:'无法移开视线',note:'字面是“没有做某事的可能/办法”。눈을 떼다 是“把目光移开”，所以整句是“无法把目光移开”。',form:'动词 + -(으)ㄹ 수 있다/없다；有收音用 을，无收音用 ㄹ。',usage:'없어 是 없다 的非正式现在式，适合歌词中亲近的语气。',compare:'못 보다（看不了/没能看）更偏能力或情况；볼 수 없다 更强调“没有可能”。'},
-      {pattern:'-잖아',name:'你看……；不是……吗',example:'널 따라가잖아',translation:'你看，我不就跟着你吗',note:'提醒对方一个双方都知道、或说话人想强调的事实。它不一定真的在提问。',form:'动词/形容词 + -잖아；따라가다 → 따라가잖아。',usage:'这里像是在向蝴蝶确认：“你看，我一直跟着你呀。”',compare:'-지? 是寻求确认；-잖아 是强调“你也知道这件事”。'},
-      {pattern:'-아/어 줘',name:'请为我……；帮我……',example:'날 안내해줘',translation:'请指引我',note:'주다 表示“为某人做”。接在动词后，表示请求对方为自己做某事。',form:'动词 + -아/어 주다；안내하다 → 안내해 주다 → 안내해줘。',usage:'줘 是 주어 的口语缩略，语气亲近直接；날 是 나를 的缩略。',compare:'-아/어 주세요 更礼貌；-아/어 줘 更像对亲近对象说“帮我……吧”。'},
-      {pattern:'N(이)라도',name:'即使是……也；哪怕……',example:'세상의 끝이라도',translation:'哪怕是世界尽头',note:'表示让步或最低限度的选择。名词有收音用 이라도，无收音用 라도。',form:'有收音：끝 + 이라도；无收音：세상 + 이라도（本句 끝有收音）。',usage:'说话人强调“无论地点多远，我都会跟随”。',compare:'N도 是普通的“也”；N이라도 带有“哪怕只是/即使是”的让步感。'},
-      {pattern:'-(으)ㄹ 테니',name:'我会……，所以……',example:'뒤따라갈 테니',translation:'我会跟着你，所以……',note:'表达说话人的意志、承诺或有根据的预想，后面常接请求、建议或让对方放心的话。',form:'动词 + -(으)ㄹ 테니；뒤따라가다 → 뒤따라갈 테니。',usage:'테니 后面的内容在歌词中省略了，语感是“我会跟着你，所以请不要离开”。',compare:'-(으)ㄹ게 是单纯承诺；-(으)ㄹ 테니 更常带“所以请……”的后续关系。'},
-      {pattern:'-지 말아 줘',name:'请不要……',example:'사라지지 말아줘',translation:'请不要消失',note:'말다 是否定命令/请求。加上 주다 后变成“请为了我不要……”，比 -지 마 更柔和。',form:'动词 + -지 말다 + 아/어 주다；사라지다 → 사라지지 말아줘。',usage:'말아줘 是 말아 주어 的缩略；歌词里反复出现，形成恳求的情绪。',compare:'-지 마：不要……（直接）；-지 마세요：请不要……（礼貌）；-지 말아줘：请不要……（亲近、恳切）。'},
-      {pattern:'-아/어도',name:'即使……也；就算……',example:'아침이 와도',translation:'即使清晨到来',note:'表示让步：即使前项成立，后项仍然成立。',form:'动词/形容词词干 + -아/어도；오다 → 와도。',usage:'清晨到来是条件，但说话人的请求不变：“也请不要消失。”',compare:'-아/어서 表示原因或顺接；-아/어도 表示“即使……也……”。'},
-      {pattern:'-는지',name:'是否……；从哪里/往哪里……',example:'어디서 왔는지',translation:'从哪里来的',note:'把一个疑问句嵌入更大的句子中。어디서 왔어? 变成 어디서 왔는지。',form:'动词现在时 + -는지；过去式常用 -았/었는지。',usage:'어디서 왔는지 어디로 가는지 = 不知道从哪里来、要往哪里去。',compare:'直接疑问：어디서 왔어?；嵌入疑问：어디서 왔는지 모르겠어（不知道从哪里来）。'},
-      {pattern:'-ㄴ/는대도',name:'即使……也；哪怕……',example:'길을 잃어버린대도',translation:'即使迷路了',note:'歌词中的口语化让步表达，可整体理解为“即使……也……”。',form:'-ㄴ/는다고 해도 的口语缩约形式；잃어버린다고 해도 → 잃어버린대도。',usage:'前项是“迷路”这种不利情况，但后文仍表示会跟随自己的心。',compare:'-아/어도 更普通直接；-ㄴ/는대도 带有“即使别人说/即使真的……”的语感。'},
-      {pattern:'-(으)ㄹ게 / -(으)ㄹ 거야',name:'我会……；打算……',example:'따라갈게 / 따를 거야',translation:'我会跟着去 / 我会跟随',note:'两者都能表示将来，但重点不同：-ㄹ게 面向听话人作承诺；-ㄹ 거야 更像自己的计划、判断或意志。',form:'动词词干 + -(으)ㄹ게；动词词干 + -(으)ㄹ 거야。',usage:'따라갈게 像对“你”保证“我会跟上”；따를 거야 像表达自己“会遵从这颗心”。',compare:'明天 갈게 = 我明天去（对你承诺）；갈 거야 = 我明天要去/会去（说明计划）。'}
-    ].map((x,i)=>({...x,id:i}));
-
-    const storeKey='dont-go-korean-progress-v1';
-    let state=JSON.parse(localStorage.getItem(storeKey)||'{"mastered":[],"last":""}');
-    let vocabOnly=false, mode='flash', practiceIndex=0, answerShown=false, currentAudio=null, continuousPlaying=false, continuousIndex=0;
-    const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-    function save(){localStorage.setItem(storeKey,JSON.stringify(state)); updateStats()}
-    function updateStats(){$('#masteredCount').textContent=state.mastered.length; $('#streakCount').textContent=state.last===new Date().toISOString().slice(0,10)?'✓':'1'}
-    function toast(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1800)}
-    function speakText(text,done){if(!('speechSynthesis' in window)){toast('当前浏览器不支持语音朗读');if(done)done();return}window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(text);utterance.lang='ko-KR';utterance.rate=.82;utterance.pitch=1;utterance.onend=()=>done&&done();const voice=window.speechSynthesis.getVoices().find(v=>v.lang.toLowerCase().startsWith('ko'));if(voice)utterance.voice=voice;window.speechSynthesis.speak(utterance);toast('正在使用备用语音：'+text)}
-    function stopAudio(){if(currentAudio){currentAudio.pause();currentAudio.currentTime=0;currentAudio=null}if('speechSynthesis' in window)window.speechSynthesis.cancel()}
-    function setPlayingLine(index){$$('.lyric').forEach(card=>card.classList.toggle('is-playing',!!card.querySelector(`[data-lyric="${index}"]`)))}
-    function playAudio(path,text,button,done){if(!done){continuousPlaying=false;setPlayingLine(-1);const continuousBtn=$('#continuousBtn');if(continuousBtn){continuousBtn.textContent='▶ 连续播放';continuousBtn.classList.remove('primary-btn')}}stopAudio();const audio=new Audio(path);currentAudio=audio;if(button)button.classList.add('playing');audio.onended=()=>{if(button)button.classList.remove('playing');currentAudio=null;if(done)done()};audio.onerror=()=>{if(button)button.classList.remove('playing');currentAudio=null;speakText(text,done)};audio.play().then(()=>toast('正在播放韩语发音')).catch(()=>speakText(text,done))}
-    function stopContinuous(){continuousPlaying=false;stopAudio();setPlayingLine(-1);const btn=$('#continuousBtn');if(btn){btn.textContent='▶ 连续播放';btn.classList.remove('primary-btn')}}
-    function playContinuous(index){if(index>=lyrics.length){stopContinuous();toast('连续播放完成');return}continuousIndex=index;setPlayingLine(index);playAudio(`audio/line-${String(index+1).padStart(2,'0')}.mp3`,lyrics[index].ko,null,()=>{if(continuousPlaying)playContinuous(index+1)})}
-    function startContinuous(index=0){stopAudio();setPlayingLine(-1);continuousPlaying=true;const btn=$('#continuousBtn');if(btn){btn.textContent='■ 停止连续';btn.classList.add('primary-btn')}playContinuous(index)}
-    function renderLyrics(){const q=$('#lyricSearch').value.trim().toLowerCase();const list=lyrics.filter(x=>(x.ko+x.zh+x.py+x.words.join(' ')).toLowerCase().includes(q));$('#lyricCount').textContent=`${list.length} / ${lyrics.length} 行`;$('#lyricsList').innerHTML=list.length?list.map((x,i)=>{const id=lyrics.indexOf(x);const chorus=chorusIds.has(id);return `<article class="lyric ${chorus?'chorus open':''}"><div class="lyric-main-row"><button class="lyric-main" data-lyric="${id}"><span class="lyric-no">${String(id+1).padStart(2,'0')}</span><span class="ko">${x.ko}</span><span class="${chorus?'chorus-pill':'lyric-tag'}">${chorus?'副歌':x.tag}</span></button><button class="start-here-btn" data-start="${id}" aria-label="从这句开始连续播放">▶ 从这里</button><button class="speak-btn" data-audio="audio/line-${String(id+1).padStart(2,'0')}.mp3" data-speak="${x.ko}" aria-label="播放这句韩语">🔊 发音</button></div><div class="lyric-detail"><div class="translation">${x.zh}</div><div class="phonetic">${x.py}</div>${renderReadingStrip(id,x)}<div class="mini-words">${x.words.map(w=>`<button data-word="${w}">${w}</button>`).join('')}</div></div></article>`}).join(''):'<div class="empty">没有找到匹配的歌词。试试搜索“시선”“心”“跟随”。</div>'}
-    function renderVocab(){const q=$('#vocabSearch').value.trim().toLowerCase();let list=vocab.filter(x=>(x.word+x.meaning+x.roman+x.example).toLowerCase().includes(q));if(vocabOnly)list=list.filter(x=>!state.mastered.includes(x.id));$('#vocabCount').textContent=`${list.length} / ${vocab.length} 个词`;$('#vocabList').innerHTML=list.length?list.map(x=>`<article class="vocab-card ${state.mastered.includes(x.id)?'mastered':''}"><div class="word-row"><div class="word">${x.word}</div><span class="pos">${x.pos}</span></div><div class="meaning">${x.meaning}</div><div class="roman">${x.roman}</div><div class="example"><b>${x.example}</b><br><span>来自歌曲歌词</span></div><div class="vocab-actions"><button class="master-btn ${state.mastered.includes(x.id)?'done':''}" data-master="${x.id}">${state.mastered.includes(x.id)?'✓ 已掌握':'标记为已掌握'}</button><button class="speak-btn" data-audio="audio/word-${String(x.id).padStart(2,'0')}.mp3" data-speak="${x.word}" aria-label="播放词汇发音">🔊 发音</button><button class="soft-btn" data-practice="${x.id}">练这个词</button></div></article>`).join(''):'<div class="empty">这里暂时没有词汇。可以取消“只看未掌握”或清空搜索。</div>'}
-    function renderGrammar(){$('#grammarList').innerHTML=grammar.map(x=>`<article class="grammar-card"><div class="grammar-top"><span class="grammar-pattern">${x.pattern}</span><span class="grammar-name">${x.name}</span></div><p>${x.note}</p><div class="grammar-example"><b>${x.example}</b><span>${x.translation}</span></div><div class="grammar-detail"><div class="grammar-detail-block"><b>构成与变形</b><span>${x.form}</span></div><div class="grammar-detail-block"><b>歌词中的作用</b><span>${x.usage}</span></div><div class="grammar-detail-block"><b>容易混淆</b><span>${x.compare}</span></div></div></article>`).join('')}
-    function makeQuiz(){const item=vocab[practiceIndex%vocab.length];const others=vocab.filter(x=>x.id!==item.id).sort(()=>Math.random()-.5).slice(0,3);return {item, options:[item,...others].sort(()=>Math.random()-.5)}}
-    const chorusIds=new Set([10,11,12,13,14,15,16,28,29]);
-    const breakdowns={
-      10:[['시선이','西宋尼','视线','主语 + 이'],['자연스레','加严丝类','自然地、不由自主地','副词'],['걸음마다','勾楞吗他','每一步、每个脚步','마다 = 每一个'],['널','挠','你（너를）','宾格缩略'],['따라가잖아','大啦嘎赞那','跟随着呀','-잖아 = 强调事实']],
-      11:[['날','那','我（나를）','宾格缩略'],['안내해줘','安内嘿做','请指引我','-아/어 주다 = 为我做']],
-      12:[['그대가','可带嘎','你','主语 + 가'],['살고 있는','撒够 一嫩','生活着的','-고 있다 = 正在'],['곳에','够塞','地方 + 到','에 = 到/在'],['나도','那都','我也','도 = 也'],['함께','韩给','一起','副词'],['데려가줘','带撩嘎做','请带我去','-아/어 줘 = 请求']],
-      13:[['세상의','塞桑诶','世界的','의 = 的'],['끝이라도','哥起啦都','即使是尽头','-이라도 = 哪怕'],['뒤따라갈 테니','对大啦嘎 忒尼','我会跟着，所以……','-(으)ㄹ 테니']],
-      14:[['부디','不地','务必、千万','副词'],['내','内','我的','나의 缩略'],['시야에서','西呀诶搜','从视野里','에서 = 从'],['벗어나지 말아줘','波搜那几 马啦做','请不要脱离','-지 말아 줘']],
-      15:[['아침이','啊亲迷','清晨','主语 + 이'],['와도','哇都','即使到来','-아/어도'],['사라지지 말아줘','撒啦几几 马啦做','请不要消失','-지 말아 줘']],
-      16:[['꿈을','古没','梦想','宾语 + 을'],['꾸는','古嫩','做着的','-는 定语'],['걸음','勾楞','步伐','名词'],['그댄','可但','你是（그대는）','는 = 主题'],['나만의','那满内','只属于我的','만 = 只'],['아름다운','啊楞他温','美丽的','形容词定语'],['나비','那比','蝴蝶','名词']],
-      28:[['날','那','我（나를）','宾格缩略'],['데려가줘','带撩嘎做','带我走吧','-아/어 줘 = 请求']],
-      29:[['세상의','塞桑诶','世界的','의 = 的'],['끝이라도','哥起啦都','哪怕是尽头','-이라도'],['따라갈게','大啦嘎给','我会跟着去','-(으)ㄹ게 = 承诺']]
+    const songs={
+      'dont-go':{title:'나비소녀 · Don\'t Go',src:'app-original-audio/index.html'},
+      growl:{title:'으르렁 · Growl',src:'growl-original-audio/index.html'},
+      'been-through':{title:'지나갈 테니 · Been Through',src:'been-through-original-audio/index.html'},
+      lies:{title:'거짓말 · Lies',src:'lies-original-audio/index.html'},
+      'haru-haru':{title:'하루하루 · Haru Haru',src:'haru-haru-original-audio/index.html'},
+      'if-you':{title:'IF YOU · BIGBANG',src:'if-you-original-audio/index.html'},
+      loser:{title:'LOSER · BIGBANG',src:'loser-original-audio/index.html'}
     };
-    const chorusNotes={10:'视线自然地跟随着你的每一步；-잖아 带有强调“你看，本来就是这样”的语气。',11:'안내하다 是“引导”，后接 -아/어 주다，变成“请为我指引”。',12:'살고 있는 곳 是“正在生活的地方”，곳에 表示“到那个地方”。',13:'哪怕到了世界尽头，我也会跟着你；-테니 带有说话人的承诺和意志。',14:'부디 加强请求语气；-지 말아줘 是亲近而柔和的“请不要……”。',15:'即使清晨到来，也请不要消失；-아/어도 表示“即使……也……”。',16:'这句把“梦想的步伐”和“只属于我的美丽蝴蝶”连在一起。',28:'날 是 나를 的缩略形式；데려가줘 是“请带我走”。',29:'-이라도 表示“哪怕……”，-ㄹ게 表示对对方的承诺：“我会跟着去”。'};
-    function alignedSyllables(korean,phonetic){const ko=[...korean].filter(ch=>ch.trim());const py=[...phonetic.replace(/\s+/g,'')];return `<div class="aligned-row">${ko.map((ch,i)=>`<span class="syllable-cell"><span class="syllable-ko">${ch}</span><span class="syllable-py">${py[i]||''}</span></span>`).join('')}</div>`}
-    function renderReadingStrip(id,x){if(!breakdowns[id])return '';return `<div class="reading-strip"><div class="reading-strip-title">副歌逐词精读 · 韩文 / 谐音逐音节对齐</div><div class="annotation-line">${breakdowns[id].map(s=>`<div class="annotation-word">${alignedSyllables(s[0],s[1])}<div class="annotation-zh">${s[2]}</div><div class="annotation-connector" aria-hidden="true"></div><div class="annotation-grammar">${s[3]}</div></div>`).join('')}</div><div class="reading-translation"><b>整句理解：</b>${chorusNotes[id]||x.zh}</div></div>`}
-    let currentQuiz=makeQuiz();
-    function renderPractice(){const item=vocab[practiceIndex%vocab.length];$('#practiceCount').textContent=`${(practiceIndex%vocab.length)+1} / ${vocab.length}`;const card=$('#practiceCard');if(mode==='flash'){card.innerHTML=`<div><div class="practice-kicker">Vocabulary flashcard</div><div class="practice-question">${item.word} <button class="speak-btn" data-audio="audio/word-${String(item.id).padStart(2,'0')}.mp3" data-speak="${item.word}" aria-label="播放当前词汇发音">🔊</button></div><div class="practice-sub">${item.pos} · ${item.roman}</div><div class="answer ${answerShown?'show':''}" id="answer"><b>${item.meaning}</b><br><span>${item.example}</span></div></div><div class="practice-actions"><button class="primary-btn" id="showAnswer">${answerShown?'隐藏答案':'显示答案'}</button><button class="soft-btn" id="nextPractice">下一个</button><button class="soft-btn" id="markPractice">${state.mastered.includes(item.id)?'已掌握':'记住了'}</button></div>`}else{currentQuiz=makeQuiz();card.innerHTML=`<div><div class="practice-kicker">Meaning quiz</div><div class="practice-question">${currentQuiz.item.word} <button class="speak-btn" data-audio="audio/word-${String(currentQuiz.item.id).padStart(2,'0')}.mp3" data-speak="${currentQuiz.item.word}" aria-label="播放当前词汇发音">🔊</button></div><div class="practice-sub">选择最合适的中文释义</div><div class="quiz-options">${currentQuiz.options.map(o=>`<button class="quiz-option" data-answer="${o.id}">${o.meaning}</button>`).join('')}</div></div><div class="practice-actions"><button class="soft-btn" id="nextPractice">换一道</button></div>`}}
-    function showTab(tab){$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));$$('.section').forEach(s=>s.classList.toggle('active',s.id===tab+'Section'));if(tab==='practice')renderPractice()}
-    document.addEventListener('click',e=>{const nav=e.target.closest('.nav-btn');if(nav)showTab(nav.dataset.tab);const speaker=e.target.closest('[data-audio]');if(speaker){playAudio(speaker.dataset.audio,speaker.dataset.speak,speaker);e.stopPropagation();return}const line=e.target.closest('.lyric-main');if(line){line.parentElement.parentElement.classList.toggle('open');return}const word=e.target.closest('[data-word]');if(word){$('#vocabSearch').value=word.dataset.word;showTab('vocab');renderVocab();return}const master=e.target.closest('[data-master]');if(master){const id=Number(master.dataset.master);state.mastered=state.mastered.includes(id)?state.mastered.filter(x=>x!==id):[...state.mastered,id];state.last=new Date().toISOString().slice(0,10);save();renderVocab();toast(state.mastered.includes(id)?'已加入掌握清单':'已移出掌握清单');return}const practice=e.target.closest('[data-practice]');if(practice){practiceIndex=Number(practice.dataset.practice);answerShown=false;showTab('practice');return}const modeBtn=e.target.closest('[data-mode]');if(modeBtn){mode=modeBtn.dataset.mode;answerShown=false;$$('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));renderPractice();return}if(e.target.id==='showAnswer'){answerShown=!answerShown;renderPractice()}if(e.target.id==='nextPractice'){practiceIndex=(practiceIndex+1)%vocab.length;answerShown=false;renderPractice()}if(e.target.id==='markPractice'){const id=vocab[practiceIndex%vocab.length].id;if(!state.mastered.includes(id))state.mastered.push(id);state.last=new Date().toISOString().slice(0,10);save();renderPractice();toast('已记录为掌握')}});
-    document.addEventListener('click',e=>{const starter=e.target.closest('[data-start]');if(!starter)return;startContinuous(Number(starter.dataset.start));e.stopPropagation()});
-    document.addEventListener('click',e=>{const opt=e.target.closest('.quiz-option');if(!opt)return;const ok=Number(opt.dataset.answer)===currentQuiz.item.id;$$('.quiz-option').forEach(b=>{b.disabled=true;if(Number(b.dataset.answer)===currentQuiz.item.id)b.classList.add('correct')});opt.classList.add(ok?'correct':'wrong');if(ok){state.mastered=state.mastered.includes(currentQuiz.item.id)?state.mastered:[...state.mastered,currentQuiz.item.id];state.last=new Date().toISOString().slice(0,10);save();toast('答对了，已计入掌握');}else toast('再看一下这张卡的词义');});
-    $('#lyricSearch').addEventListener('input',renderLyrics);$('#vocabSearch').addEventListener('input',renderVocab);$('#showUnmastered').addEventListener('click',e=>{vocabOnly=!vocabOnly;e.target.textContent=vocabOnly?'显示全部':'只看未掌握';renderVocab()});$('#expandAll').addEventListener('click',e=>{$$('.lyric').forEach(x=>x.classList.add('open'));e.target.textContent='已全部展开';setTimeout(()=>e.target.textContent='全部展开',1200)});
-    $('#continuousBtn').addEventListener('click',()=>continuousPlaying?stopContinuous():startContinuous());
-
-    // 独立版本：以下时间轴对应 audio/song-original.mp3，保留原项目的学习资料不变。
-    const songCues=[
-      {baseId:0,start:12.86,end:16.80},{baseId:1,start:16.80,end:19.20},{baseId:2,start:19.20,end:21.78},
-      {baseId:3,start:21.78,end:25.22},{baseId:4,start:25.22,end:28.80},{baseId:5,start:28.80,end:31.56},
-      {baseId:6,start:31.56,end:34.52},{baseId:7,start:34.52,end:37.62},{baseId:8,start:37.62,end:40.70},
-      {baseId:9,start:40.70,end:43.02},{baseId:10,start:43.02,end:48.80},{baseId:11,start:48.80,end:51.84},
-      {baseId:12,start:51.84,end:57.46},{baseId:13,start:57.46,end:61.56},{baseId:14,start:61.56,end:65.40},
-      {baseId:15,start:65.40,end:68.44},{baseId:16,start:68.44,end:74.76},
-      {start:74.76,end:86.26,ko:'♪ woo-hoo-hoo oh yeah',zh:'伴唱段',py:'',tag:'伴唱'},
-      {baseId:17,start:86.26,end:89.94},{baseId:18,start:89.94,end:93.14},{baseId:19,start:93.14,end:96.22},
-      {baseId:20,start:96.22,end:99.42},{baseId:21,start:99.42,end:102.96},{baseId:22,start:102.96,end:105.36},
-      {baseId:23,start:105.36,end:108.44,ko:'사랑은 이렇게 나도 모르게',zh:'爱情就这样，在不知不觉间',py:'撒朗恩 一漏给 那都 莫了给'},
-      {baseId:23,start:108.44,end:111.44,ko:'예고도 없이 불시에 찾아와',zh:'毫无预兆，突然降临',py:'耶够都 欧西 不西诶 恰加哇'},
-      {baseId:8,start:111.44,end:116.88,ko:'왈츠처럼 사뿐히 앉아 눈을 뗄 수 없어',zh:'像华尔兹般轻盈地停驻，令人目不转睛',py:'挖此凑龙 撒本尼 安那 / 努内 得 苏 欧扫',chorus:true},
-      {baseId:10,start:116.88,end:122.68,chorus:true},{baseId:11,start:122.68,end:125.48,chorus:true},
-      {baseId:12,start:126.06,end:131.22,chorus:true},{baseId:13,start:131.22,end:135.40,chorus:true},
-      {baseId:14,start:135.40,end:139.22,chorus:true},{baseId:15,start:139.22,end:143.52,chorus:true},
-      {baseId:16,start:143.52,end:149.70,chorus:true},
-      {baseId:24,start:149.70,end:152.62,ko:'낯선 곳을 헤맨다 해도',zh:'即使在陌生的地方徘徊',py:'那宋 够丝 嘿们他 嘿都'},
-      {baseId:24,start:152.62,end:155.22,ko:'길을 잃어버린대도',zh:'即使迷失方向',py:'gil了 一咯剖林带都'},
-      {baseId:25,start:156.02,end:160.96,ko:'누구보다 솔직한 나의 맘을 따를 거야',zh:'也要跟随我那比谁都真挚的心',py:'努谷啵他 嗖几看 那诶 满没 大了勾呀'},
-      {baseId:26,start:160.96,end:164.08,ko:'조용히 눈에 띄는 몸짓',zh:'静静地跃入视野的身影',py:'走用hi 努内 第嫩 蒙几'},
-      {baseId:26,start:164.08,end:166.76,ko:'강하고 부드러운 눈빛',zh:'强大又温柔的目光',py:'康哈够 不的漏温 努比'},
-      {baseId:27,start:166.76,end:171.28},{baseId:28,start:171.28,end:174.90,chorus:true},
-      {baseId:12,start:174.90,end:180.92,chorus:true},{baseId:29,start:180.92,end:184.04,chorus:true},
-      {start:184.04,end:185.44,ko:'♪ Oh no',zh:'伴唱',py:'',tag:'伴唱',chorus:true},
-      {baseId:14,start:185.44,end:188.46,ko:'내 시야에서 벗어나지 말아줘',zh:'千万不要脱离我的视野',py:'内 西呀诶搜 波搜那几 马啦做',chorus:true},
-      {baseId:15,start:188.46,end:191.50,chorus:true},{start:191.50,end:192.96,ko:'♪ Oh',zh:'伴唱',py:'',tag:'伴唱',chorus:true},
-      {baseId:30,start:192.96,end:194.84,ko:'조그만 손짓',zh:'一个小小的举动',py:'走可吗韩 宋几'},
-      {baseId:30,start:194.84,end:198.76,ko:'나의 가슴엔 회오리가 친다',zh:'在我心里刮起旋风',py:'那诶 嘎森们 会哦里嘎 亲他'}
-    ];
-    const songAudio=$('#songAudio'), audioStatus=$('#audioStatus'), floatingLocator=$('#floatingLocator');
-    let activeCue=0, singleCue=-1;
-    function cueSource(c){return Number.isInteger(c.baseId)?lyrics[c.baseId]:c}
-    function cueMatches(c,q){const x=cueSource(c);return [x.ko,x.zh,x.py,(x.words||[]).join(' ')].join(' ').toLowerCase().includes(q)}
-    function setPlayingLine(index){if(index>=0)activeCue=index;$$('.lyric').forEach(card=>card.classList.toggle('is-playing',Number(card.dataset.cue)===index));if(floatingLocator)floatingLocator.classList.toggle('show',activeCue>=0)}
-    function statusFor(c,index){audioStatus.textContent=`正在播放第 ${index+1} 段 · ${c.start.toFixed(1)}–${c.end.toFixed(1)} 秒；可拖动上方进度条从任意位置开始。`}
-    function findCueAt(t){let found=-1;for(let i=0;i<songCues.length;i++){if(t>=songCues[i].start&&t<songCues[i].end){found=i;break}}return found}
-    function stopContinuous(){continuousPlaying=false;singleCue=-1;if(songAudio){songAudio.pause()}setPlayingLine(-1);const btn=$('#continuousBtn');if(btn){btn.textContent='▶ 从头连续播放';btn.classList.remove('primary-btn')}audioStatus.textContent='已暂停；可以拖动进度条，或点击任一句重新开始。'}
-    function playCue(index,continuous=false){const c=songCues[index];if(!c)return stopContinuous();if(currentAudio)stopAudio();continuousPlaying=continuous;singleCue=continuous?-1:index;activeCue=index;setPlayingLine(index);statusFor(c,index);if(continuous){const btn=$('#continuousBtn');btn.textContent='■ 停止连续';btn.classList.add('primary-btn')}songAudio.currentTime=c.start+0.02;songAudio.play().catch(()=>toast('请先点击页面中的播放按钮'))}
-    function startContinuous(index=0){if(!songCues.length)return;playCue(Math.max(0,index),true)}
-    function renderLyrics(){const q=$('#lyricSearch').value.trim().toLowerCase();const visible=songCues.map((c,index)=>({c,index})).filter(({c})=>!q||cueMatches(c,q));$('#lyricCount').textContent=`${visible.length} / ${songCues.length} 段`;$('#lyricsList').innerHTML=visible.length?visible.map(({c,index})=>{const x=cueSource(c), chorus=!!c.chorus;const detail=Number.isInteger(c.baseId)?renderReadingStrip(c.baseId,x):'';return `<article class="lyric ${chorus?'chorus open':''}" data-cue="${index}"><div class="lyric-main-row"><button class="lyric-main" data-lyric="${index}"><span class="lyric-no">${String(index+1).padStart(2,'0')}</span><span class="ko">${c.ko||x.ko}</span><span class="${chorus?'chorus-pill':'lyric-tag'}">${chorus?'副歌':(c.tag||x.tag||'')}</span></button><button class="start-here-btn" data-start="${index}" aria-label="从这句开始连续播放">▶ 从这里</button></div><div class="lyric-detail"><div class="translation">${c.zh||x.zh}</div><div class="phonetic">${c.py||x.py||''}</div>${detail}<div class="mini-words">${(x.words||[]).map(w=>`<button data-word="${w}">${w}</button>`).join('')}</div></div></article>`}).join(''):'<div class="empty">没有找到匹配的歌词。</div>'}
-    songAudio.addEventListener('timeupdate',()=>{const now=songAudio.currentTime;const current=findCueAt(now);if(current!==-1){activeCue=current;setPlayingLine(current);if(continuousPlaying&&now>=songCues[current].end-.05){playCue(current+1,true)}}else if(!continuousPlaying)setPlayingLine(-1);if(singleCue!==-1&&now>=songCues[singleCue].end-.05){songAudio.pause();setPlayingLine(-1);audioStatus.textContent='本句播放完成；点击其他句子可继续对照。';singleCue=-1}});
-    songAudio.addEventListener('ended',()=>{if(continuousPlaying){continuousPlaying=false;setPlayingLine(-1);$('#continuousBtn').textContent='▶ 从头连续播放';$('#continuousBtn').classList.remove('primary-btn');audioStatus.textContent='整首原曲连续播放完成。'}});
-    document.addEventListener('keydown',e=>{if(e.code!=='Space'||e.target.closest('input,textarea,select,[contenteditable="true"]'))return;e.preventDefault();if(songAudio.paused){songAudio.play().then(()=>{audioStatus.textContent='继续播放原曲；再次按空格即可暂停。'}).catch(()=>toast('请先点击页面中的播放按钮'))}else{songAudio.pause();audioStatus.textContent='已暂停；再次按空格继续播放。'}});
-    const lineGrammar=[
-      '조그만 是 조그마하다 的定语形式，修饰 날갯짓；널 是 너를 的缩略；향한 来自 향하다，表示“朝向你的”。',
-      '따라오라 是 따라오다 加引用式命令 -(으)라；손짓한 是过去定语；것 같다 表示“好像……”，-아서 接出后文原因。',
-      '애절한 和 무언의 都是定语，分别修饰 눈빛、이야기；과 表示“和”，连接两个名词。',
-      '에 表示旋风发生的落点“在心中”；몰아치던 的 -던 表示回想中的持续状态；그날 밤是“那天晚上”。',
-      '그대의 是“你的”；모습에 表示因看到身影而产生反应；넋을 놓다 是“失神”的惯用语，-고 连接后续状态。',
-      '하나뿐인 是“唯一的”，뿐表示“仅仅、只有”；영혼을是宾语；뺏기고是被夺走后再连接下一动作。',
-      '몸짓에 表示“因这个动作/身影”；완전히是副词；취해서的 -아서/어서 表示原因或先后：“沉醉于……之后”。',
-      '숨 쉬는 是动词的现在定语形式，修饰 것；것조차表示“连……都”；잊어버린的 -어버리다带有彻底、无法挽回的语气；-ㄴ데引出背景。',
-      '처럼表示“像……一样”；사뿐히是副词；앉아的 -아连接连续画面，可理解为“轻盈地停驻着”。',
-      '눈을 떼다是“移开视线”；-(으)ㄹ 수 없다表示“没有可能、无法……”，없어是非正式口语。',
-      '걸음마다的 마다表示“每一个”；널是 너를 的缩略；-잖아用于强调对方也知道的事实：“你看，我一直跟着你呀”。',
-      '날是 나를 的缩略；안내해 줘由 안내하다 + -아/어 주다构成，表示“请为我指引”。',
-      '살고 있는是 -고 있다 的定语形式，表示“正在生活的”；곳에是“到/在这个地方”；도表示“也”；데려가 줘是“请带我去”。',
-      '끝이라도的 -이라도表示让步“哪怕是……”；뒤따라갈 테니的 -(으)ㄹ 테니表示承诺或意志，并暗含“所以请……”。',
-      '시야에서的 에서表示脱离的范围“从视野里”；-지 말아 줘是亲近而恳切的“请不要……”；부디加强请求语气。',
-      '와도由 오다 + -아/어도 构成，表示“即使清晨到来”；사라지지 말아 줘表示“请不要消失”。',
-      '꿈을 꾸는中 -는是动词现在定语；그댄是 그대는 的缩略；나만의中 만表示“只”；아름다운是形容词定语。',
-      '어디서和 어디로分别表示“从哪里、到哪里”；-는지把疑问内容嵌入句子：“从哪里来、往哪里去”。',
-      '여기까지表示“直到这里”；마중을 와준由 마중을 오다 和 -아/어 주다 组成，表示“特意来迎接”；와준的 -ㄴ是过去定语。',
-      '가파른是 가파르다 的定语形；깎아진表示被削成、削出的结果；도表示“即使……也/连……都”。',
-      '걱정 마是 걱정하다 的否定命令“别担心”；무엇도表示“什么都”；두려울 것이 없다是“没有可怕的事”；-으니表示原因或依据。',
-      '너는提出主题“至于你”；뽐내是 뽐내다 的口语叙述/连接形式；우아한修饰 자태，表示“优雅的姿态”。',
-      '몇 번이고表示“无论多少次、一次又一次”；반하고的 -고连接连续或并列的情绪。',
-      '나도 모르게是固定表达“在自己也没察觉的情况下”；예고도 없이表示“连预告都没有”；찾아와是 찾아오다 的连接形式，表示爱情突然来到。',
-      '낯선是 낯설다 的定语形；-ㄴ다 해도、-ㄴ대도都是让步表达“即使……也”；잃어버리다带有“彻底弄丢”的语气。',
-      '누구보다表示比较“比任何人都”；솔직한和 나의 都修饰后面的名词；따를 거야中的 -(으)ㄹ 거야表示意志或打算。',
-      '조용히是副词；눈에 띄다是“显眼、映入视野”的惯用语；-는修饰 몸짓；강하고中的 -고 连接两个描写；부드러운是形容词定语，和 강하고 一起修饰 눈빛。',
-      '거부할 수 없는由 -(으)ㄹ 수 없다 变成定语，表示“无法拒绝的”；나니까的 -(이)니까 表示原因“因为是我/因为我……”。',
-      '날是 나를 的缩略；데려가 줘是动词 + -아/어 주다 的请求形式：“请带我走”。',
-      '끝이라도表示“哪怕是尽头”；따라갈게中的 -(으)ㄹ게是面向对方的承诺：“我会跟着去”。',
-      '조그마한是 조그마하다 的定语形式；가슴엔是 가슴에는 的缩略；회오리가是主语；친다的 -ㄴ다是陈述/歌词中的叙述语气。'
-    ];
-    const fullBreakdowns={
-      0:[['조그만','走 可 满','小小的','定语'],['날갯짓','那 给 几','振翅、扇动翅膀','名词'],['널','挠','你（너를）','宾格缩略'],['향한','hiang 韩','朝向的','향하다的定语'],['이끌림','一 个 林','吸引力','名词']],
-      1:[['나에게','那 诶 给','对我、向我','에게 = 对/向'],['따라오라','大 啦 哦 啦','跟过来吧','引用式命令 -(으)라'],['손짓한','宋 几 坚','招手的','过去定语'],['것','扣','事情、样子','것 같다中的것'],['같아서','卡 他 搜','好像……所以','-것 같다 + -아서']],
-      2:[['애절한','诶 草 蓝','哀切的','形容词定语'],['눈빛과','努 比 刮','眼神和','과 = 和'],['무언의','木 翁 诶','无言的','의 = 的'],['이야기','一 呀 gi','故事、话语','名词']],
-      3:[['가슴에','嘎 森 没','在心中','에 = 位置'],['회오리가','会 哦 里 嘎','旋风','主语 + 가'],['몰아치던','莫 啦 气 东','曾猛烈袭来的','-던 = 回忆中的状态'],['그날 밤','可 那 半','那天晚上','名词短语']],
-      4:[['오묘한','哦 妙 韩','奇妙神秘的','形容词定语'],['그대의','可 带 诶','你的','의 = 的'],['모습에','莫 丝 呗','在身影上、因身影','에 = 对象/落点'],['넋을 놓고','闹 给 喏 够','失神，然后……','惯用语 + -고']],
-      5:[['하나뿐인','哈 那 本 宁','唯一的','뿐 = 只有'],['영혼을','泳 红 内','灵魂','宾语 + 을'],['뺏기고','背 给 够','被夺走，然后……','被动 + -고']],
-      6:[['그대의','可 带 诶','你的','의 = 的'],['몸짓에','蒙 几 塞','因身影、动作','에 = 原因对象'],['완전히','完 从 尼','完全地','副词'],['취해서','催 嘿 搜','沉醉于……之后','-아서/어서']],
-      7:[['숨 쉬는','宋 嘘 嫩','呼吸着的','-는 = 动词定语'],['것조차','扣 走 恰','连……都','조차 = 甚至'],['잊어버린','一 走 剖 林','彻底忘掉的','-어버리다 = 完全'],['나인데','那 因 带','是这样的我','-ㄴ데 = 背景']],
-      8:[['왈츠처럼','挖 此 凑 龙','像华尔兹一样','처럼 = 像……一样'],['사뿐히','撒 本 尼','轻盈地','副词'],['앉아','安 那','坐着、停驻后','-아 = 连接']],
-      9:[['눈을','努 内','视线、眼睛','宾语 + 을'],['뗄 수 없어','得 苏 欧 扫','无法移开','-(으)ㄹ 수 없다']],
-      10:[['시선이','西 宋 尼','视线','主语 + 이'],['자연스레','加 严 丝 类','自然地、不由自主地','副词'],['걸음마다','勾 楞 马 达','每一步、每个脚步','마다 = 每一个'],['널','挠','你（너를）','宾格缩略'],['따라가잖아','大 啦 嘎 赞 那','跟随着呀','-잖아 = 强调事实']],
-      11:[['날','那','我（나를）','宾格缩略'],['안내해줘','安 内 嘿 做','请指引我','-아/어 주다 = 为我做']],
-      12:[['그대가','可 带 嘎','你','主语 + 가'],['살고 있는','撒 够 一 嫩','正在生活的','-고 있다 = 正在'],['곳에','够 塞','地方 + 到','에 = 到/在'],['나도','那 都','我也','도 = 也'],['함께','韩 给','一起','副词'],['데려가줘','带 撩 嘎 做','请带我去','-아/어 줘 = 请求']],
-      13:[['세상의','塞 桑 诶','世界的','의 = 的'],['끝이라도','哥 起 啦 都','哪怕是尽头','-이라도 = 哪怕'],['뒤따라갈','对 大 啦 嘎','跟着去的','-(으)ㄹ = 将来定语'],['테니','忒 尼','所以、我会……','-(으)ㄹ 테니']],
-      14:[['부디','不 地','务必、千万','副词'],['내','内','我的（나의）','缩略'],['시야에서','西 呀 诶 搜','从视野里','에서 = 从'],['벗어나지','波 搜 那 几','不要脱离','-지 말다'],['말아줘','马 啦 做','请不要……','-지 말아 줘']],
-      15:[['아침이','啊 亲 迷','清晨','主语 + 이'],['와도','哇 都','即使到来','-아/어도'],['사라지지','撒 啦 几 几','不要消失','-지 말다'],['말아줘','马 啦 做','请不要……','-지 말아 줘']],
-      16:[['꿈을','古 没','梦想','宾语 + 을'],['꾸는','古 嫩','做着的','-는 = 定语'],['걸음','勾 楞','步伐','名词'],['그댄','可 但','你（그대는）','는 = 主题'],['나만의','那 满 诶','只属于我的','만 = 只'],['아름다운','啊 凛 达 温','美丽的','形容词定语'],['나비','那 比','蝴蝶','名词']],
-      17:[['어디서','哦 地 搜','从哪里','에서 = 出发点'],['왔는지','哇 嫩 几','来了哪里/是否来了','-는지 = 嵌入疑问'],['어디로','哦 地 咯','到哪里','로 = 方向'],['가는지','嘎 嫩 几','要去哪里/是否去','-는지 = 嵌入疑问']],
-      18:[['친절히','亲 草 里','亲切地、贴心地','副词'],['여기까지','哟 给 嘎 几','直到这里','까지 = 到……为止'],['마중을','吗 中 额','迎接','宾语 + 을'],['와준','哇 君','特意来做的','-아/어 주다 + 过去定语'],['너','挠','你','名词']],
-      19:[['가파른','嘎 帕 楞','陡峭的','形容词定语'],['오르막','哦 啦 马','上坡','名词'],['깎아진','嘎 进','被削出的','-아지다 = 结果/被动感'],['절벽도','草 表 都','悬崖也、即使是悬崖','도 = 也/即使']],
-      20:[['걱정 마','勾 从 马','别担心','-지 마的口语省略'],['무엇도','木 哦 都','什么都','도 = 也/都'],['두려울','度 撩 乌','可怕的','-(으)ㄹ = 定语'],['것이','扣 西','事情','것 + 이'],['없으니','欧 丝 尼','因为没有','-으니 = 原因']],
-      21:[['너는','挠 嫩','至于你','는 = 主题'],['뽐내','嘣 内','展示、炫耀着','动词连接/叙述'],['우아한','乌 啊 韩','优雅的','形容词定语'],['자태','加 忒','姿态、风姿','名词']],
-      22:[['오','哦','啊、噢','感叹词'],['난','南','我（나는）','主题缩略'],['몇 번이고','苗 本 尼 够','无论多少次','-고 = 反复/连接'],['반하고','半 哈 够','迷上，然后……','-고 = 连接']],
-      23:[['사랑은','撒 郎 恩','爱情','는 = 主题'],['이렇게','一 斗 给','这样地','副词'],['나도 모르게','那 都 莫 了 给','在自己也没察觉时','固定表达'],['예고도 없이','耶 够 都 欧 西','连预告也没有','도 없이 = 没有……'],['불시에','不 西 诶','突然地','副词'],['찾아와','恰 加 哇','找来、突然来到','찾아오다的连接形']],
-      24:[['낯선','那 宋','陌生的','形容词定语'],['곳을','够 丝','地方','宾语 + 을'],['헤맨다 해도','嘿 们 达 嘿 都','即使徘徊','-ㄴ다 해도 = 即使'],['길을','gil了','道路','宾语 + 을'],['잃어버린대도','一 咯 剖 林 带 都','即使彻底迷路','-ㄴ대도 = 即使']],
-      25:[['누구보다','努 谷 波 达','比任何人都','보다 = 比较'],['솔직한','嗖 几 看','真挚的','形容词定语'],['나의','那 诶','我的','의 = 的'],['맘을','满 没','心、心意','宾语 + 을'],['따를 거야','大 楞 勾 呀','会跟随、要遵从','-(으)ㄹ 거야']],
-      26:[['조용히','走 用 嘿','静静地','副词'],['눈에 띄는','努 内 第 嫩','映入视野的','-는 = 定语'],['몸짓','蒙 几','身影、动作','名词'],['강하고','康 哈 够','强大又……','-고 = 连接'],['부드러운','不 的 楞 温','温柔的','形容词定语'],['눈빛','努 比','目光','名词']],
-      27:[['거부할','勾 不 哈','无法拒绝的','-(으)ㄹ 수 없다的定语'],['수 없는','苏 欧 嫩','不能的','수 없다 = 无法'],['나니까','那 尼 嘎','因为是我/因为我……','-(이)니까 = 原因']],
-      28:[['날','那','我（나를）','宾格缩略'],['데려가줘','带 撩 嘎 做','请带我走','-아/어 줘 = 请求']],
-      29:[['세상의','塞 桑 诶','世界的','의 = 的'],['끝이라도','哥 起 啦 都','哪怕是尽头','-이라도 = 让步'],['따라갈게','大 啦 嘎 给','我会跟着去','-(으)ㄹ게 = 承诺']],
-      30:[['조그마한','走 可 马 韩','小小的','形容词定语'],['손짓','宋 几','手势、举动','名词'],['나의','那 诶','我的','의 = 的'],['가슴엔','嘎 森 恩','在我心里（가슴에는）','에 + 는 缩略'],['회오리가','会 哦 里 嘎','旋风','主语 + 가'],['친다','亲 达','刮起、袭来','-ㄴ다 = 叙述语气']]
-    };
-    Object.assign(breakdowns,fullBreakdowns);
-    function alignedSyllables(korean,phonetic){const ko=[...korean].filter(ch=>ch.trim());const py=Array.isArray(phonetic)?phonetic:(phonetic.trim().includes(' ')?phonetic.trim().split(/\s+/):[...phonetic.replace(/\s+/g,'')]);return `<div class="aligned-row">${ko.map((ch,i)=>`<span class="syllable-cell"><span class="syllable-ko">${ch}</span><span class="syllable-py">${py[i]||''}</span></span>`).join('')}</div>`}
-    function renderReadingStrip(id,x){if(!breakdowns[id])return '';return `<div class="reading-strip"><div class="reading-strip-title">逐词语法精读 · 韩文 / 谐音逐音节对齐</div><div class="annotation-line">${breakdowns[id].map(s=>`<div class="annotation-word">${alignedSyllables(s[0],s[1])}<div class="annotation-zh">${s[2]}</div><div class="annotation-connector" aria-hidden="true"></div><div class="annotation-grammar">${s[3]}</div></div>`).join('')}</div><div class="reading-translation"><b>整句理解：</b>${x.zh}</div></div>`}
-    const grammarLineBases=[1,0,3,4,9,10,11,13,13,14,15,17,24,25];
-    const firstCueForBase=baseId=>songCues.findIndex(c=>c.baseId===baseId);
-    function renderGrammar(){const general=grammar.map((x,i)=>`<article class="grammar-card" data-grammar-card="${i}"><div class="grammar-top"><span class="grammar-pattern">${x.pattern}</span><span class="grammar-name">${x.name}</span></div><p>${x.note}</p><div class="grammar-example"><b>${x.example}</b><span>${x.translation}</span></div><div class="grammar-detail"><div class="grammar-detail-block"><b>构成与变形</b><span>${x.form}</span></div><div class="grammar-detail-block"><b>歌词中的作用</b><span>${x.usage}</span></div><div class="grammar-detail-block"><b>容易混淆</b><span>${x.compare}</span></div></div></article>`).join('');const lines=lyrics.map((x,i)=>`<article class="grammar-card" data-grammar-line="${i}"><div class="grammar-top"><span class="grammar-pattern">第 ${String(i+1).padStart(2,'0')} 行</span><span class="grammar-name">${x.ko}</span></div><p>${x.zh}</p>${renderReadingStrip(i,x)}</article>`).join('');$('#grammarList').innerHTML=general+`<div class="grammar-subhead">整首歌逐行语法覆盖</div>`+lines}
-    function locateCurrentCue(){if(activeCue<0){toast('请先点击或播放一条歌词');return}$('#lyricSearch').value='';showTab('lyrics');renderLyrics();requestAnimationFrame(()=>{const row=document.querySelector(`.lyric[data-cue="${activeCue}"]`);if(!row)return;row.classList.add('lyric-target');row.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>row.classList.remove('lyric-target'),2200)})}
-    floatingLocator.addEventListener('click',locateCurrentCue);
-    document.addEventListener('click',e=>{const line=e.target.closest('.lyric-main');if(!line)return;const row=line.closest('.lyric');if(row){activeCue=Number(row.dataset.cue);floatingLocator.classList.add('show')}});
-    renderLyrics();renderVocab();renderGrammar();floatingLocator.classList.add('show');updateStats();
+    const beenThroughButton=document.createElement('button');
+    beenThroughButton.className='song-btn';
+    beenThroughButton.dataset.song='been-through';
+    beenThroughButton.innerHTML='<div class="song-title">지나갈 테니</div><div class="song-sub">Been Through · 顺其自然</div>';
+    document.querySelector('.directory').insertBefore(beenThroughButton,document.querySelector('.directory-note'));
+    const liesButton=document.createElement('button');
+    liesButton.className='song-btn';
+    liesButton.dataset.song='lies';
+    liesButton.innerHTML='<div class="song-title">거짓말</div><div class="song-sub">Lies · 谎言</div>';
+    document.querySelector('.directory').insertBefore(liesButton,document.querySelector('.directory-note'));
+    const extraSongs=[['haru-haru','하루하루','Haru Haru · 一天一天'],['if-you','IF YOU','IF YOU · BIGBANG'],['loser','LOSER','LOSER · BIGBANG']];
+    extraSongs.forEach(([id,title,sub])=>{const b=document.createElement('button');b.className='song-btn';b.dataset.song=id;b.innerHTML='<div class="song-title">'+title+'</div><div class="song-sub">'+sub+'</div>';document.querySelector('.directory').insertBefore(b,document.querySelector('.directory-note'))});
+    const frame=document.querySelector('#songFrame'),current=document.querySelector('#currentSong'),loading=document.querySelector('#loading');
+    function switchSong(id){const song=songs[id]||songs['dont-go'];document.querySelectorAll('.song-btn').forEach(b=>b.classList.toggle('active',b.dataset.song===id));current.textContent=song.title;loading.hidden=false;frame.hidden=true;frame.src=song.src+'?v=20260915-5';location.hash=id;}
+    frame.addEventListener('load',()=>{loading.hidden=true;frame.hidden=false});
+    document.addEventListener('click',e=>{const btn=e.target.closest('.song-btn');if(btn)switchSong(btn.dataset.song)});
+    const initial=location.hash.slice(1);if(initial&&songs[initial])switchSong(initial);
+  </script>
+  <script>
+    const frame=document.querySelector('#songFrame');
+    frame.addEventListener('load',()=>{const doc=frame.contentDocument;if(!doc)return;let style=doc.querySelector('#unified-floating-controls');if(!style){style=doc.createElement('style');style.id='unified-floating-controls';doc.head.appendChild(style)}style.textContent='.floating-locator,.locator{position:fixed!important;right:24px!important;bottom:24px!important}.floating-verse-toggle,.verse-toggle{position:fixed!important;right:24px!important;bottom:108px!important}@media(max-width:760px){.floating-locator,.locator{right:12px!important;bottom:12px!important}.floating-verse-toggle,.verse-toggle{right:12px!important;bottom:106px!important}}';});
   </script>
 </body>
 </html>
